@@ -4,20 +4,19 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>my new post | LPC&#39;s blog</title>
+    <title>自制力 | LPC&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="lpc">
     
-    <meta name="description" content="测试
-看看是什么效果oh 
-123456789101112131415161718192021222324252627282930       function [y,num] = Newton(f,a,b,TOL,N)%  y    the answer%  num  The number of ">
+    <meta name="description" content="越来越觉得，自制力是。人必须得学会控制自己的欲望。这对于管理自己的时间特别重要。最近越发的觉得，时间过得真的很快，不加控制的话，一天很容易就混过去了。出此之外，执行力也是非常重要的一环，拖延症是成不了大事的。
+总之，要把自己控制住，只有能控制住自己的人才能把握将来。">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="lee_lpc" />
-    <meta name="twitter:title" content="my new post | LPC&#39;s blog" />
+    <meta name="twitter:title" content="自制力 | LPC&#39;s blog" />
       
     
     
@@ -74,15 +73,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/09/20/my-new-post/" title="my new post" itemprop="url">my new post</a>
+      <a href="/2014/11/05/自制力/" title="自制力" itemprop="url">自制力</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="lpc">lpc</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-09-20T11:08:54.000Z" itemprop="datePublished">9月 20 2014</time>
-    更新日期:<time datetime="2014-10-27T07:03:15.000Z" itemprop="dateModified">10月 27 2014</time>
+    <time datetime="2014-11-04T16:31:26.000Z" itemprop="datePublished">11月 5 2014</time>
+    更新日期:<time datetime="2014-11-04T16:41:10.000Z" itemprop="dateModified">11月 5 2014</time>
     
   </p>
 </header>
@@ -91,31 +90,26 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#测试"><span class="toc-number">1.</span> <span class="toc-text">测试</span></a></li></ol>
+		
 		</div>
 		
-		<h4 id="测试">测试</h4>
-<p><em>看看是什么效果</em><br>oh </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">       </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">[y,num]</span> = <span class="title">Newton</span><span class="params">(f,a,b,TOL,N)</span></span></div><div class="line"><span class="comment">%  y    the answer</span></div><div class="line"><span class="comment">%  num  The number of steps </span></div><div class="line"><span class="comment">%</span></div><div class="line">    syms x;</div><div class="line">    F = feval(f,x);</div><div class="line">    <span class="comment">%求导</span></div><div class="line">    df = diff(F);</div><div class="line">    <span class="comment">%还原成数值函数</span></div><div class="line">    g = matlabFunction(df);</div><div class="line">    temp_x = (a + b) / <span class="number">2</span>;</div><div class="line">    temp_f = feval(f,temp_x);</div><div class="line">    <span class="built_in">i</span> = <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span> <span class="built_in">i</span> &lt; N</div><div class="line">        f_x = temp_x - temp_f / (feval(g,temp_x));</div><div class="line">        temp_f = feval(f,f_x);</div><div class="line">        <span class="keyword">if</span> temp_f == <span class="number">0</span> || <span class="built_in">abs</span>(f_x - temp_x) &lt; TOL</div><div class="line">            <span class="built_in">disp</span>(<span class="string">'The solution is '</span>),</div><div class="line">            y = f_x,</div><div class="line">            <span class="built_in">disp</span>(<span class="string">'The number of steps is'</span>)</div><div class="line">            num = <span class="built_in">i</span>,</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">else</span></div><div class="line">            temp_x = f_x;</div><div class="line">        <span class="keyword">end</span></div><div class="line">        <span class="built_in">i</span> = <span class="built_in">i</span> + <span class="number">1</span>;</div><div class="line">    <span class="keyword">end</span></div><div class="line">    </div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-
-
-
-
-
-
-<p>good</p>
-<p><code>还可以有</code></p>
-<p>这么多行</p>
+		<p>越来越觉得，自制力是。人必须得学会控制自己的欲望。这对于管理自己的时间特别重要。最近越发的觉得，时间过得真的很快，不加控制的话，一天很容易就混过去了。出此之外，执行力也是非常重要的一环，拖延症是成不了大事的。</p>
+<p>总之，要把自己控制住，只有能控制住自己的人才能把握将来。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/随笔/">随笔</a>
+  </div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2014/09/20/my-new-post/" data-title="my new post | LPC&#39;s blog" data-tsina="一个李富贵" class="share clearfix">
+  <div data-url="http://yoursite.com/2014/11/05/自制力/" data-title="自制力 | LPC&#39;s blog" data-tsina="一个李富贵" class="share clearfix">
   </div>
 
 </div>
@@ -124,19 +118,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/10/27/时间/" title="时间">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  时间</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/09/20/hello-world/"  title="Hello World">
+<a href="/2014/10/27/时间/"  title="时间">
  <strong>NEXT:</strong><br/> 
- <span>Hello World
+ <span>时间
 </span>
 </a>
 </div>
@@ -149,7 +135,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#测试"><span class="toc-number">1.</span> <span class="toc-text">测试</span></a></li></ol>
+  
   </div>
 
 <div id="asidepart">
