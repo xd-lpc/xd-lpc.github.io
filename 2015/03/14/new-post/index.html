@@ -9,7 +9,9 @@
     
     <meta name="author" content="lpc">
     
-    <meta name="description" content="1234567891011121314151617181920212223242526272829public class NumberOfOne {    public static int hammingWeight(int n){        int weight = 0;         ">
+    <meta name="description" content="最近打算刷LeetCode，希望能坚持刷完。先从最简单的开始吧。
+191题  Number of 1 Bits
+Write a function that takes an unsigned integer and returns the number of ’1’ bits it has (als">
     
     
     
@@ -80,7 +82,7 @@
     </p>
   <p class="article-time">
     <time datetime="2015-03-14T06:52:13.000Z" itemprop="datePublished">3月 14 2015</time>
-    更新日期:<time datetime="2015-03-14T07:01:18.000Z" itemprop="dateModified">3月 14 2015</time>
+    更新日期:<time datetime="2015-03-14T07:12:45.000Z" itemprop="dateModified">3月 14 2015</time>
     
   </p>
 </header>
@@ -89,10 +91,13 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#191题_Number_of_1_Bits"><span class="toc-number">1.</span> <span class="toc-text">191题  Number of 1 Bits</span></a></li></ol>
 		</div>
 		
-		<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> NumberOfOne {</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hammingWeight</span>(<span class="keyword">int</span> n){</div><div class="line">        <span class="keyword">int</span> weight = <span class="number">0</span>;</div><div class="line">        </div><div class="line">        String intToStr = Integer.toBinaryString(n);</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt; intToStr.length();i++){</div><div class="line">            </div><div class="line">            System.<span class="keyword">out</span>.println(intToStr.charAt(i));</div><div class="line">            </div><div class="line">            <span class="keyword">if</span>(intToStr.charAt(i) == <span class="string">'1'</span>){</div><div class="line">                weight++;</div><div class="line">            }      </div><div class="line">        }  </div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"   "</span>);</div><div class="line">        System.<span class="keyword">out</span>.println(weight);</div><div class="line">  </div><div class="line">        <span class="keyword">return</span> weight;</div><div class="line">    }</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {</div><div class="line">    </div><div class="line">        <span class="keyword">int</span> test = <span class="number">11</span>;</div><div class="line">        hammingWeight(test); </div><div class="line">    }</div><div class="line">     </div><div class="line">}</div></pre></td></tr></table></figure>  
+		<p>最近打算刷LeetCode，希望能坚持刷完。<br>先从最简单的开始吧。</p>
+<h3 id="191题_Number_of_1_Bits">191题  Number of 1 Bits</h3>
+<p>Write a function that takes an unsigned integer and returns the number of ’1’ bits it has (also known as the Hamming weight).For example, the 32-bit integer ’11’ has binary representation 00000000000000000000000000001011, so the function should return 3.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> NumberOfOne {</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hammingWeight</span>(<span class="keyword">int</span> n){</div><div class="line">        <span class="keyword">int</span> weight = <span class="number">0</span>;</div><div class="line">        <span class="comment">//toBinaryString()方法将整数转换成二进制字符串形式</span></div><div class="line">        String intToStr = Integer.toBinaryString(n);</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt; intToStr.length();i++){</div><div class="line">            </div><div class="line">            System.<span class="keyword">out</span>.println(intToStr.charAt(i));</div><div class="line">            </div><div class="line">            <span class="comment">//char字符类型用单引号</span></div><div class="line">            <span class="keyword">if</span>(intToStr.charAt(i) == <span class="string">'1'</span>){</div><div class="line">                weight++;</div><div class="line">            }      </div><div class="line">        }  </div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"   "</span>);</div><div class="line">        System.<span class="keyword">out</span>.println(weight); </div><div class="line">        <span class="keyword">return</span> weight;</div><div class="line">    }</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {</div><div class="line">        <span class="keyword">int</span> test = <span class="number">11</span>;</div><div class="line">        hammingWeight(test); </div><div class="line">    }  </div><div class="line">}</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -127,7 +132,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#191题_Number_of_1_Bits"><span class="toc-number">1.</span> <span class="toc-text">191题  Number of 1 Bits</span></a></li></ol>
   </div>
 
 <div id="asidepart">
