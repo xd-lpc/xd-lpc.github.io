@@ -4,18 +4,19 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | LPC&#39;s blog</title>
+    <title>LeetCode-165 | LPC&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="lpc">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+    <meta name="description" content="165 Compare Version Numbers
+Compare two version numbers version1 and version2.If version1 &amp;gt; version2 return 1, if version1 &amp;lt; version2 return -1,">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="lee_lpc" />
-    <meta name="twitter:title" content="Hello World | LPC&#39;s blog" />
+    <meta name="twitter:title" content="LeetCode-165 | LPC&#39;s blog" />
       
     
     
@@ -72,15 +73,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/09/20/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2015/03/15/LeetCode-165/" title="LeetCode-165" itemprop="url">LeetCode-165</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="lpc">lpc</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-09-20T09:08:29.000Z" itemprop="datePublished">9月 20 2014</time>
-    更新日期:<time datetime="2014-09-20T09:08:29.000Z" itemprop="dateModified">9月 20 2014</time>
+    <time datetime="2015-03-15T13:37:35.000Z" itemprop="datePublished">3月 15 2015</time>
+    更新日期:<time datetime="2015-03-15T13:53:41.000Z" itemprop="dateModified">3月 15 2015</time>
     
   </p>
 </header>
@@ -89,37 +90,27 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#165_Compare_Version_Numbers"><span class="toc-number">1.</span> <span class="toc-text">165 Compare Version Numbers</span></a></li></ol>
 		</div>
 		
-		<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-  
+		<h3 id="165_Compare_Version_Numbers">165 Compare Version Numbers</h3>
+<p>Compare two version numbers version1 and version2.<br>If version1 &gt; version2 return 1, if version1 &lt; version2 return -1, otherwise return 0.You may assume that the version strings are non-empty and contain only digits and the <code>.</code>character.The <code>.</code>character does not represent a decimal point and is used to separate number sequences.For instance, 2.5 is not “two and a half” or “half way to version three”, it is the fifth second-level revision of the second first-level revision.<br>Here is an example of version numbers ordering:<code>0.1 &lt; 1.1 &lt; 1.2 &lt; 13.37</code></p>
+<p>注意比较的是版本号的大小，可能会出现<code>2.1.1.1</code>的情况；还需要考虑的情况有：<code>1.1.01与1.1.1</code>.<code>01</code>和<code>1</code>是相等的。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public <span class="keyword">int</span> compareVersion(String version1, String version2) {</div><div class="line">        String ver1[] = version1.<span class="keyword">split</span>(<span class="string">"\\."</span>);</div><div class="line">        String ver2[] = version2.<span class="keyword">split</span>(<span class="string">"\\."</span>);</div><div class="line">        <span class="keyword">int</span> <span class="keyword">length</span> = Math.min(ver1.<span class="keyword">length</span>, ver2.<span class="keyword">length</span>);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">length</span>; i++) {</div><div class="line">            <span class="keyword">if</span> (Integer.parseInt(ver1[i]) - Integer.parseInt(ver2[i]) &gt; <span class="number">0</span>) {</div><div class="line">                <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">            } <span class="keyword">else</span> <span class="keyword">if</span> (Integer.parseInt(ver1[i]) - Integer.parseInt(ver2[i]) &lt; <span class="number">0</span>) {</div><div class="line">                <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">            }</div><div class="line">        }</div><div class="line">        <span class="keyword">if</span> (ver1.<span class="keyword">length</span> &gt; <span class="keyword">length</span>) {</div><div class="line">            <span class="keyword">if</span> (Integer.parseInt(ver1[<span class="keyword">length</span>]) &gt; <span class="number">0</span>) {</div><div class="line">                <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">            }</div><div class="line">        }</div><div class="line">        <span class="keyword">if</span> (ver2.<span class="keyword">length</span> &gt; <span class="keyword">length</span>) {</div><div class="line">            <span class="keyword">if</span> (Integer.parseInt(ver2[<span class="keyword">length</span>]) &gt; <span class="number">0</span>) {</div><div class="line">                <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">            }</div><div class="line">        }</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    }</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/leetcode/">leetcode</a>
+  </div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2014/09/20/hello-world/" data-title="Hello World | LPC&#39;s blog" data-tsina="一个李富贵" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/03/15/LeetCode-165/" data-title="LeetCode-165 | LPC&#39;s blog" data-tsina="一个李富贵" class="share clearfix">
   </div>
 
 </div>
@@ -128,14 +119,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/09/20/my-new-post/" title="my new post">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  my new post</span>
+
+<div class="next">
+<a href="/2015/03/14/leetcode191/"  title="LeetCode：191">
+ <strong>NEXT:</strong><br/> 
+ <span>LeetCode：191
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -145,7 +136,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#165_Compare_Version_Numbers"><span class="toc-number">1.</span> <span class="toc-text">165 Compare Version Numbers</span></a></li></ol>
   </div>
 
 <div id="asidepart">
