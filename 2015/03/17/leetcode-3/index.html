@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>时间 | LPC&#39;s blog</title>
+    <title>LeetCode-3 | LPC&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="lpc">
     
-    <meta name="description" content="有段时间了，一直感觉怪怪的，想着什么时候能写写东西。但总是让自己用各种理由推掉，其实原因就是懒呗。其实仔细想想，更多的也不是懒，而是不够成熟，很多时候自己的行为更多的是逃避。这样很不好，不应该是这个年龄段该做的事。
-最近看到曾经一起抠脚扯淡的基友居然也会跑去妹子的微博下留下肉麻的情话，一方面为他高兴">
+    <meta name="description" content="3 Longest Substring Without Repeating Characters
+Given a string, find the length of the longest substring without repeating characters. For example, t">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="lee_lpc" />
-    <meta name="twitter:title" content="时间 | LPC&#39;s blog" />
+    <meta name="twitter:title" content="LeetCode-3 | LPC&#39;s blog" />
       
     
     
@@ -73,15 +73,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/10/27/时间/" title="时间" itemprop="url">时间</a>
+      <a href="/2015/03/17/leetcode-3/" title="LeetCode-3" itemprop="url">LeetCode-3</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="lpc">lpc</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-10-27T06:24:03.000Z" itemprop="datePublished">10月 27 2014</time>
-    更新日期:<time datetime="2014-10-27T07:11:47.000Z" itemprop="dateModified">10月 27 2014</time>
+    <time datetime="2015-03-17T14:16:59.000Z" itemprop="datePublished">3月 17 2015</time>
+    更新日期:<time datetime="2015-03-17T14:46:56.000Z" itemprop="dateModified">3月 17 2015</time>
     
   </p>
 </header>
@@ -90,19 +90,27 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#3_Longest_Substring_Without_Repeating_Characters"><span class="toc-number">1.</span> <span class="toc-text">3 Longest Substring Without Repeating Characters</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#HashMap和HashTable的区别"><span class="toc-number">1.0.1.</span> <span class="toc-text">HashMap和HashTable的区别</span></a></li></ol></li></ol></li></ol>
 		</div>
 		
-		<p>有段时间了，一直感觉怪怪的，想着什么时候能写写东西。但总是让自己用各种理由推掉，其实原因就是懒呗。其实仔细想想，更多的也不是懒，而是不够成熟，很多时候自己的行为更多的是逃避。这样很不好，不应该是这个年龄段该做的事。</p>
-<p>最近看到曾经一起抠脚扯淡的基友居然也会跑去妹子的微博下留下肉麻的情话，一方面为他高兴，一方面也感到些许伤感。高兴的是他终于脱团了，能和自己喜欢的妹子合法的啪啪啪了。伤感的是周围可能又要少了一枚神经病了，这也是没办法的事，人总归是要成长的。生活就是一次又一次的遇见与离别。</p>
-<p>总之，看见小伙伴们都在努力的向上奋进，感觉自己也不能在蹉跎下去了呢！</p>
+		<h3 id="3_Longest_Substring_Without_Repeating_Characters">3 Longest Substring Without Repeating Characters</h3>
+<p>Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for <code>abcabcbb</code> is <code>abc</code>, which the length is 3. For <code>bbbbb</code> the longest substring is <code>b</code>, with the length of 1.</p>
+<p>需要返回最长不重复子串的长度。<code>abba</code>是2，<code>abcd</code>是4。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">public <span class="keyword">static</span> int lengthOfLongestSubstring2(<span class="type">String</span> s) {</div><div class="line">        <span class="type">HashMap</span>&lt;<span class="type">Character</span>, <span class="type">Integer</span>&gt; <span class="built_in">map</span> = <span class="keyword">new</span> <span class="type">HashMap</span>&lt;&gt;();</div><div class="line">        char[] ch = s.toCharArray();</div><div class="line">        int <span class="built_in">max</span> = <span class="number">0</span>;</div><div class="line">        int curr = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; ch.length; i++) {</div><div class="line">            curr++;</div><div class="line">            <span class="keyword">if</span> (<span class="built_in">map</span>.containsKey(ch[i])) {</div><div class="line">            <span class="comment">//curr里保存的是当前不重复子串的长度</span></div><div class="line">            <span class="comment">//如果i - map.get(ch[i])比curr大，说明当前子串中包含重复元素</span></div><div class="line">            <span class="comment">//例如：abba，所以要选择二者中较小的那个</span></div><div class="line">                curr = <span class="type">Math</span>.<span class="built_in">min</span>(curr, i - <span class="built_in">map</span>.<span class="keyword">get</span>(ch[i]));</div><div class="line">            }</div><div class="line">            <span class="built_in">map</span>.put(ch[i], i);</div><div class="line">            <span class="keyword">if</span> (curr &gt; <span class="built_in">max</span>)</div><div class="line">                <span class="built_in">max</span> = curr;</div><div class="line">        }</div><div class="line">        <span class="keyword">return</span> <span class="built_in">max</span>;</div><div class="line">    }</div></pre></td></tr></table></figure>
+
+<h5 id="HashMap和HashTable的区别">HashMap和HashTable的区别</h5>
+<ol>
+<li>HashTable不允许null值的（key和value都不行），HashMap允许null值（key和<br>value都行）。</li>
+<li>HashTable使用Enumeration，HashMap使用Iterator来遍历。</li>
+<li>HashTable是线程安全的，多线程可以共享一个HashTable；而HashMap不是线程安全的，所以效率要高于HashTable。</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/随笔/">随笔</a>
+  <span></span> <a href="/tags/leetcode/">leetcode</a>
   </div>
 
 
@@ -110,7 +118,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2014/10/27/时间/" data-title="时间 | LPC&#39;s blog" data-tsina="一个李富贵" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/03/17/leetcode-3/" data-title="LeetCode-3 | LPC&#39;s blog" data-tsina="一个李富贵" class="share clearfix">
   </div>
 
 </div>
@@ -119,19 +127,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/11/05/自制力/" title="自制力">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  自制力</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/09/20/my-new-post/"  title="my new post">
+<a href="/2015/03/15/LeetCode-165/"  title="LeetCode-165">
  <strong>NEXT:</strong><br/> 
- <span>my new post
+ <span>LeetCode-165
 </span>
 </a>
 </div>
@@ -144,7 +144,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#3_Longest_Substring_Without_Repeating_Characters"><span class="toc-number">1.</span> <span class="toc-text">3 Longest Substring Without Repeating Characters</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#HashMap和HashTable的区别"><span class="toc-number">1.0.1.</span> <span class="toc-text">HashMap和HashTable的区别</span></a></li></ol></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
