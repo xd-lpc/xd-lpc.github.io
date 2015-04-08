@@ -4,20 +4,19 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>my new post | LPC&#39;s blog</title>
+    <title>leetcode-9 | LPC&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="lpc">
     
-    <meta name="description" content="测试
-看看是什么效果oh 
-123456789101112131415161718192021222324252627282930       function [y,num] = Newton(f,a,b,TOL,N)%  y    the answer%  num  The number of ">
+    <meta name="description" content="9 Palindrome Number
+Determine whether an integer is a palindrome. Do this without extra space.Some hints:Could negative integers be palindromes? (ie, ">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="lee_lpc" />
-    <meta name="twitter:title" content="my new post | LPC&#39;s blog" />
+    <meta name="twitter:title" content="leetcode-9 | LPC&#39;s blog" />
       
     
     
@@ -74,15 +73,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/09/20/my-new-post/" title="my new post" itemprop="url">my new post</a>
+      <a href="/2015/04/08/leetcode-9/" title="leetcode-9" itemprop="url">leetcode-9</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="lpc">lpc</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-09-20T11:08:54.000Z" itemprop="datePublished">9月 20 2014</time>
-    更新日期:<time datetime="2014-10-27T07:03:15.000Z" itemprop="dateModified">10月 27 2014</time>
+    <time datetime="2015-04-08T13:22:15.000Z" itemprop="datePublished">4月 8 2015</time>
+    更新日期:<time datetime="2015-04-08T13:30:34.000Z" itemprop="dateModified">4月 8 2015</time>
     
   </p>
 </header>
@@ -91,31 +90,29 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#测试"><span class="toc-number">1.</span> <span class="toc-text">测试</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#9_Palindrome_Number"><span class="toc-number">1.</span> <span class="toc-text">9 Palindrome Number</span></a></li></ol>
 		</div>
 		
-		<h4 id="测试">测试</h4>
-<p><em>看看是什么效果</em><br>oh </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">       </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">[y,num]</span> = <span class="title">Newton</span><span class="params">(f,a,b,TOL,N)</span></span></div><div class="line"><span class="comment">%  y    the answer</span></div><div class="line"><span class="comment">%  num  The number of steps </span></div><div class="line"><span class="comment">%</span></div><div class="line">    syms x;</div><div class="line">    F = feval(f,x);</div><div class="line">    <span class="comment">%求导</span></div><div class="line">    df = diff(F);</div><div class="line">    <span class="comment">%还原成数值函数</span></div><div class="line">    g = matlabFunction(df);</div><div class="line">    temp_x = (a + b) / <span class="number">2</span>;</div><div class="line">    temp_f = feval(f,temp_x);</div><div class="line">    <span class="built_in">i</span> = <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span> <span class="built_in">i</span> &lt; N</div><div class="line">        f_x = temp_x - temp_f / (feval(g,temp_x));</div><div class="line">        temp_f = feval(f,f_x);</div><div class="line">        <span class="keyword">if</span> temp_f == <span class="number">0</span> || <span class="built_in">abs</span>(f_x - temp_x) &lt; TOL</div><div class="line">            <span class="built_in">disp</span>(<span class="string">'The solution is '</span>),</div><div class="line">            y = f_x,</div><div class="line">            <span class="built_in">disp</span>(<span class="string">'The number of steps is'</span>)</div><div class="line">            num = <span class="built_in">i</span>,</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">else</span></div><div class="line">            temp_x = f_x;</div><div class="line">        <span class="keyword">end</span></div><div class="line">        <span class="built_in">i</span> = <span class="built_in">i</span> + <span class="number">1</span>;</div><div class="line">    <span class="keyword">end</span></div><div class="line">    </div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+		<h3 id="9_Palindrome_Number">9 Palindrome Number</h3>
+<p>Determine whether an integer is a palindrome. Do this without extra space.<br>Some hints:<br>Could negative integers be palindromes? (ie, -1)<br>If you are thinking of converting the integer to string, note the restriction of using extra space.<br>You could also try reversing an integer. However, if you have solved the problem “Reverse Integer”, you know that the reversed integer might overflow. How would you handle such case?<br>There is a more generic way of solving this problem.</p>
+<p>判断一个数是不是对称的。思路就是，逐一对比数的首位和最后一位。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span>(<span class="keyword">int</span> x) {</div><div class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>) {</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        }</div><div class="line">        <span class="keyword">int</span> d = <span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span> (x / d &gt;= <span class="number">10</span>) {</div><div class="line">            d = d * <span class="number">10</span>;</div><div class="line">        }</div><div class="line">        <span class="keyword">while</span> (x &gt; <span class="number">0</span>) {</div><div class="line">            <span class="keyword">int</span> first = x / d;</div><div class="line">            <span class="keyword">int</span> last = x % <span class="number">10</span>;</div><div class="line">            <span class="keyword">if</span> (first != last) {</div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            }</div><div class="line">            x = x % d / <span class="number">10</span>;</div><div class="line">            d = d / <span class="number">100</span>;</div><div class="line">        }</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    }</div></pre></td></tr></table></figure>
 
-
-
-
-
-
-<p>good</p>
-<p><code>还可以有</code></p>
-<p>这么多行</p>
   
 	</div>
 		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/leetcode/">leetcode</a>
+  </div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2014/09/20/my-new-post/" data-title="my new post | LPC&#39;s blog" data-tsina="一个李富贵" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/04/08/leetcode-9/" data-title="leetcode-9 | LPC&#39;s blog" data-tsina="一个李富贵" class="share clearfix">
   </div>
 
 </div>
@@ -124,19 +121,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/10/27/时间/" title="时间">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  时间</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/09/20/hello-world/"  title="Hello World">
+<a href="/2015/03/31/排序算法/"  title="排序算法">
  <strong>NEXT:</strong><br/> 
- <span>Hello World
+ <span>排序算法
 </span>
 </a>
 </div>
@@ -149,7 +138,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#测试"><span class="toc-number">1.</span> <span class="toc-text">测试</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#9_Palindrome_Number"><span class="toc-number">1.</span> <span class="toc-text">9 Palindrome Number</span></a></li></ol>
   </div>
 
 <div id="asidepart">
